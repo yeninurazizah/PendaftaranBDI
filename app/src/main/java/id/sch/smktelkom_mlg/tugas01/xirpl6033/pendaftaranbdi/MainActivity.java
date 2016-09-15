@@ -17,13 +17,6 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinnerKelas;
     CheckBox SA, SI, SM, STS, SIn;
 
-    {
-        tvHasil2.setText("Jenis Kelamin         :" + hasil2);
-    }
-
-    toString()
-
-    else
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    tvHasil3.setText("Kelas         : "+spinnerKelas.getSelectedItem().
-
     private void doClick() {
         String nama = etNama.getText().toString();
         String hasil2 = null;
@@ -73,19 +64,18 @@ public class MainActivity extends AppCompatActivity {
             RadioButton rb = (RadioButton)
                     findViewById(rgJenisKelamin.getCheckedRadioButtonId());
             hasil2 = rb.getText().toString();
+        } else {
+            tvHasil2.setText("Jenis Kelamin         :" + hasil2);
         }
+        tvHasil3.setText("Kelas         : " + spinnerKelas.getSelectedItem().toString());
 
+        if (SA.isChecked()) hasil4 += SA.getText() + ", ";
+        if (SI.isChecked()) hasil4 += SI.getText() + ", ";
+        if (SM.isChecked()) hasil4 += SM.getText() + ", ";
+        if (STS.isChecked()) hasil4 += STS.getText() + ", ";
+        if (SIn.isChecked()) hasil4 += SIn.getText() + ", ";
+
+        if (hasil4.length() == startlen) hasil4 += "Tidak ada pilihan";
+        tvHasil4.setText(hasil4);
     }
-
-    )
-
-            if(SA.isChecked())hasil4+=SA.getText()+", "
-            if(SI.isChecked())hasil4+=SI.getText()+", "
-            if(SM.isChecked())hasil4+=SM.getText()+", "
-            if(STS.isChecked())hasil4+=STS.getText()+", "
-            if(SIn.isChecked())hasil4+=SIn.getText()+", "
-
-            if(hasil4.length()==startlen)hasil4+="Tidak ada pilihan"
-            tvHasil4.setText(hasil4)
-}
 }
